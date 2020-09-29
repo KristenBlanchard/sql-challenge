@@ -52,7 +52,12 @@ WHERE departments.dept_name = 'Sales'
 OR departments.dept_name = 'Development';
 
 -- 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name
-23q
+SELECT last_name,
+COUNT(last_name) AS "frequency"
+FROM employees
+GROUP BY last_name
+ORDER BY COUNT(last_name) DESC;
+
 
 
 
